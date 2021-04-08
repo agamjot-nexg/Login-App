@@ -15,7 +15,7 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 app.use('/assets', express.static(path.join(__dirname, 'public/assets')))
 app.use(session({
     secret: uuidv4(),
-    resave: false,
+    resave: true,
     saveUninitialized: true
 }));
 app.use(express.json());          // Set Express JSON Middleware
@@ -30,5 +30,5 @@ app.get('/', (req,res)=>{
 
 
 app.listen(PORT, ()=>{
-    console.log("Server starter on Port :" + PORT);
+    console.log("Server starter on Port:" + PORT);
 });    //Declaration of Server Listen
